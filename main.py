@@ -54,7 +54,7 @@ while(1==1):
     elif c == "/out":
         sys.exit()
     elif c == "/user":
-        with open(sure[sere],'r',encoding = "utf_8") as f1:
+        with open("user.txt",'r',encoding = "utf_8") as f1:
             user = [s.strip() for s in f1.readlines()]
             s_n= '\n'.join(user)
             print(s_n)
