@@ -1,5 +1,12 @@
 import sys
+import time
+from datetime import datetime
 
+print("Copyright (c) 2020 ddijj")
+print("python-local-chat")
+
+sere=1
+sure=["log.txt","log-2.txt"]
 chat =[]
 l=[]
 ban =[]
@@ -23,33 +30,37 @@ else:
     with open('pass.txt', 'a',encoding = "utf_8") as f:
          f.write(pase+"\n")
 print("<会話ログ>")
-with open('log.txt','r',encoding = "utf_8") as f1:
+with open(sure[sere],'r',encoding = "utf_8") as f1:
     l = [s.strip() for s in f1.readlines()]
     s_n= '\n'.join(l)
     print(s_n)
 while(1==1):
     c = input("文章を入力：")
     if c == "/dl":
-        with open('log.txt','r',encoding = "utf_8") as f1:
+        with open(sure[sere],'r',encoding = "utf_8") as f1:
             l = [s.strip() for s in f1.readlines()]
             s_n= '\n'.join(l)
             print(s_n)
-    elif c == "/book":
+    elif c == "/help":
         print("コマンド一覧"+"\n")
         print("/dl...保存されているログを読み込み"+"\n")
         print("/user...ユーザーの一覧を表示"+"\n")
         print("/out...チャットを停止"+"\n")
+        print("/channel...チャンネルの切替")
+    elif c=="/book":
+        print("0...メインのチャンネル")
+        print("1...サブののチャンネル")
     elif c == "/out":
         sys.exit()
     elif c == "/user":
-        with open('user.txt','r',encoding = "utf_8") as f1:
+        with open(sure[sere],'r',encoding = "utf_8") as f1:
             user = [s.strip() for s in f1.readlines()]
             s_n= '\n'.join(user)
             print(s_n)
     elif c == "/dh" and name=="ddijj":
         pase = input("パスワードを入力:")
         if pase == "pass":
-            with open('log.txt', 'w',encoding = "utf_8") as f:
+            with open(sure[sere], 'w',encoding = "utf_8") as f:
                 f.write("system:管理者が削除しました"+"\n")
         else:
             print("system:ログインに失敗しました")
@@ -59,12 +70,19 @@ while(1==1):
             gg = input("ban者を入力>")
             with open('ban.txt', 'w') as f:
                 f.writelines(gg)
-    else:              
-        chat.append(c)
-        l.append(name+":"+c)
-        with open('log.txt', 'a',encoding = "utf_8") as f:
-            f.write(name+":"+c+"\n")
-        with open('log.txt','r',encoding = "utf_8") as f1:
+    elif c=="/channel":
+        sere = int(input("チャンネル番号を入力>"))
+        with open(sure[sere],'r',encoding = "utf_8") as f1:
             l = [s.strip() for s in f1.readlines()]
             s_n= '\n'.join(l)
             print(s_n)
+    else:              
+        chat.append(c)
+        l.append(name+":"+c)
+        with open(sure[sere], 'a',encoding = "utf_8") as f:
+            f.write(name+":"+c+"\n")
+        with open(sure[sere],'r',encoding = "utf_8") as f1:
+            l = [s.strip() for s in f1.readlines()]
+            s_n= '\n'.join(l)
+            print(s_n)
+        time.sleep(0.5)

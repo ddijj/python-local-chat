@@ -1,6 +1,2 @@
-<<<<<<< HEAD
 ddijj0221
-=======
-taku
-ddijj
->>>>>>> 8153a19cde2cdc5b22580e731e3a8910bb62959f
+hello
