@@ -46,7 +46,8 @@ while(1==1):
         print("/dl...保存されているログを読み込み"+"\n")
         print("/user...ユーザーの一覧を表示"+"\n")
         print("/out...チャットを停止"+"\n")
-        print("/channel...チャンネルの切替")
+        print("/channel...チャンネルの切替"+"\n")
+        print("/book...チャンネルの一覧"+"\n")
     elif c=="/book":
         print("0...メインのチャンネル")
         print("1...サブののチャンネル")
