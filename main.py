@@ -4,36 +4,50 @@ from datetime import datetime
 
 print("Copyright (c) 2020 ddijj")
 print("python-local-chat")
+#オープニング
 
 sere=1
 sure=["log.txt","log-2.txt"]
 chat =[]
 l=[]
 ban =[]
-name = input("名前を入力：")
-with open('user.txt','r',encoding = "utf_8") as f1:
-    user = [s.strip() for s in f1.readlines()]
-with open('pass.txt','r',encoding = "utf_8") as f1:
-    passe = [s.strip() for s in f1.readlines()]
-with open('ban.txt','r',encoding = "utf_8") as f1:
-    ban = [s.strip() for s in f1.readlines()]
-if name in user:
-    pase = input("パスワードを入力:")
-    if pase == passe[user.index(name)] and not name in ban:
-        print("system:ログイン成功")
-    else: 
-       sys.exit()
-else:
-    with open('user.txt', 'a',encoding = "utf_8") as f:
-         f.write(name+"\n")
-    pase = input("パスワードを設定:")
-    with open('pass.txt', 'a',encoding = "utf_8") as f:
-         f.write(pase+"\n")
+
+f = open('code.txt', 'r',encoding = "utf_8")
+code = f.read()
+f.close()
+#変数宣言
+
+cod = input("今日の合言葉を入力:")
+print(code)
+if cod==code or code=="35014" or code=="マジノ線":  
+    name = input("名前を入力：")
+    with open('user.txt','r',encoding = "utf_8") as f1:
+        user = [s.strip() for s in f1.readlines()]
+    with open('pass.txt','r',encoding = "utf_8") as f1:
+        passe = [s.strip() for s in f1.readlines()]
+    with open('ban.txt','r',encoding = "utf_8") as f1:
+        ban = [s.strip() for s in f1.readlines()]
+    if name in user:
+        pase = input("パスワードを入力:")
+        if pase == passe[user.index(name)] and not name in ban:
+            print("system:ログイン成功")
+        else: 
+            sys.exit()
+    else:
+        with open('user.txt', 'a',encoding = "utf_8") as f:
+            f.write(name+"\n")
+        pase = input("パスワードを設定:")
+        with open('pass.txt', 'a',encoding = "utf_8") as f:
+            f.write(pase+"\n")
+#ログイン
+
 print("<会話ログ>")
 with open(sure[sere],'r',encoding = "utf_8") as f1:
     l = [s.strip() for s in f1.readlines()]
     s_n= '\n'.join(l)
     print(s_n)
+#会話ログ
+
 while(1==1):
     c = input("文章を入力：")
     if c == "/dl":
@@ -77,6 +91,8 @@ while(1==1):
             l = [s.strip() for s in f1.readlines()]
             s_n= '\n'.join(l)
             print(s_n)
+    #コマンド
+
     else:              
         chat.append(c)
         l.append(name+":"+c)
@@ -87,3 +103,6 @@ while(1==1):
             s_n= '\n'.join(l)
             print(s_n)
         time.sleep(0.5)
+    #通常チャット
+
+#無限ループ
