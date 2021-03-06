@@ -19,14 +19,14 @@
 /out...チャットを停止  
 /channel...チャンネルの切替  
 /book...チャンネルの一覧  
-/dh...管理者がログを一括削除することができます。(デフォルトの管理者アカウント...admin,デフォルトの管理者パスワード...pass)
-/ban...管理者が人をbanすることができます。(デフォルトの管理者アカウント...admin,デフォルトの管理者パスワード...pass)
+/dh...管理者がログを一括削除することができます。(デフォルトの管理者アカウント...admin,デフォルトの管理者パスワード...pass) 
+/ban...管理者が人をbanすることができます。(デフォルトの管理者アカウント...admin,デフォルトの管理者パスワード...pass) 
 
-コマンドの一覧は/bookからも見ることができます
+コマンドの一覧は/bookからも見ることができます 
 
 ## 開発者へ
 
-github.com/ddijj/python-local-chat/blob/master/Developer.md
+github.com/ddijj/python-local-chat/blob/master/Developer.md 
 
 ## 問い合わせ
 
